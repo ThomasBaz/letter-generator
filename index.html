@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='fr'>
+	<head>
+		<meta charset="utf-8">
+		<title>Indemnités Kilométrique vélo ou Trottinette</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index,follow">
+		<meta name="Description" content="Permet de générer chaque mois sa déclaration de km vélo / trottinette">
+		<link rel="stylesheet" href="style.css">
+        <link id="favicon" rel="shortcut icon" href="favicon.ico" />
+	</head>
+	<body>
+        <div class="form-wrapper">
+		<div class="form-title">Générateur d'attestation d'indemnités kilométrique</div>
+		<div class="form-sub-title">Remplissez les informations concernant le mois dont vous souhaitez obtenir une indemnité. </div>
+        <form name="myForm" action="javascript:validateForm()">
+            <div class="form-section">
+                <label for="month">Mois :</label>
+                <select name="month" id="month" required>
+                    <option value="">--Séléctionnez un mois--</option>
+                    <option value="de Janvier">Janvier</option>
+                    <option value="de Février">Février</option>
+                    <option value="de Mars">Mars</option>
+                    <option value="d'Avril">Avril</option>
+                    <option value="de Mai">Mai</option>
+                    <option value="de Juin">Juin</option>
+                    <option value="de Juillet">Juillet</option>
+                    <option value="d'Août">Août</option>
+                    <option value="de Septembre">Septembre</option>
+                    <option value="d'Octobre">Octobre</option>
+                    <option value="de Novembre">Novembre</option>
+                    <option value="de Décembre">Décembre</option>
+                </select>
+            </div>
+            <div class="form-section">
+                <label for="name">Nom : </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-section">
+                <label for="first-name">Prénom : </label>
+                <input type="text" name="first-name" id="first-name" required>
+            </div>
+            <div class="form-section">
+                <label for="year">Année : </label>
+                <input type="number" name="year" id="year" required>
+            </div>
+            <div class="form-section">
+                <label for="distance">Distance domicile/travail en km (aller + retour) :</label>
+                <input type="number" name="distance" id="distance" required>
+            </div>
+            <div class="form-section">
+                <label for="day_nb">Nombre de jours :</label>
+                <input type="number" name="day_nb" id="day_nb" required>
+            </div>
+             <div class="form-section">
+                <label for="signature">Ajouter une signature (jpeg ou png) :</label>
+                <input class="no-border" type="file"
+                    id="signature" name="signature"
+                    accept="image/png, image/jpeg" onchange="javascript:readURL(this)">
+             </div>
+            <div class="btn-wrapper">
+                <button class="button-53" role="button" type="submit" >Générer le pdf</button>
+            </div>
+            </form>
+        </div>
+        <div id="letter">
+            <div id="text-letter"></div>
+            <img class="signature-letter" id="signature-letter-img" src="" />
+            <div id="signature-letter-text"></div>
+        </div>
+		<script src="script.js"></script>
+	</body>
+</html>
